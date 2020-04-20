@@ -58,6 +58,13 @@ ggplot(data = hsb2) +
   geom_point(mapping = aes(x = math, y = science, color = female))
 ```
 
+Question 4 - math and science scores by gender in two plots
+```{r}
+ggplot(data = hsb2) +
+  geom_point(mapping = aes(x = math, y = science)) +
+  facet_wrap(~ female)
+```
+
 
 
 
