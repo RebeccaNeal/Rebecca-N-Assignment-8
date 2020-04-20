@@ -42,8 +42,21 @@ Howard_Data
 ```
 
 
+Load ggplot package
+```{r}
+library(ggplot2)
+```
 
+Read in hsb2 data
+```{r include=FALSE}
+hsb2 <- read_csv("hsb2.csv")
+```
 
+Question 3 - Math and Science scores by gender
+```{r}
+ggplot(data = hsb2) +
+  geom_point(mapping = aes(x = math, y = science, color = female))
+```
 
 
 
