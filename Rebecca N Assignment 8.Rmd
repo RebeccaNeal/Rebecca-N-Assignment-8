@@ -15,7 +15,7 @@ library(tidyverse)
 ```
 
 This is a function to reverse score identified columns and create a total score
-```{r}
+```{r include=FALSE}
 Likert_Total <- function(x,y,z){
   Reversed <- abs(x[,c(z)]-y)
   Non_Reversed_Columns <- x[,-z]
@@ -26,3 +26,25 @@ Likert_Total <- function(x,y,z){
   return(Total_Data_Frame)
 }
 ```
+
+Load in data
+```{r}
+HD_ugly <- read_csv("Howard's Data.csv")
+HD <- HD_ugly[-1]
+HD
+```
+
+This is practicing that script with Howard's data
+```{r}
+CTR <- c(3,5,7)
+Howard_Data <- Likert_Total(HD, 8, CTR)
+Howard_Data
+```
+
+
+
+
+
+
+
+
